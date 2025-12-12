@@ -57,11 +57,11 @@ pipeline {
 
         }
 
-        stage('2820275g-S6') {
+         stage('2820275g-S6') {
+            when { expression { currentBuild.resultIsBetterOrEqualTo('SUCCESS') } }
             steps {
-                echo "Running Stage 6"
+                echo "2820275g-S6:Getting ready for next phase."
             }
-        }
 
     }
 }
