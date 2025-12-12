@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('2820275g-S1') {
+            steps {
+                echo "Running Stage 1"
+            }
+        }
+
+        stage('2820275g-S2') {
+            steps {
+                echo "Running Stage 2"
+            }
+        }
+
+        stage('2820275g-S3') {
+            steps {
+                echo "Running Stage 3"
+            }
+        }
+
+        stage('2820275g-S4A') {
+            steps {
+                echo "Running Stage 4A"
+            }
+        }
+
+        stage('2820275g-S4B') {
+            steps {
+                echo "Running Stage 4B"
+            }
+        }
+
+        stage('2820275g-S5') {
+            steps {
+                echo "Running Stage 5"
+            }
+        }
+
+        stage('2820275g-S6') {
+            steps {
+                echo "Running Stage 6"
+            }
+        }
+
+    }
+}
