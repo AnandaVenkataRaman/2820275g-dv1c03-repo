@@ -23,13 +23,13 @@ pipeline {
 
         stage('2820275g-S4A') {
             steps {
-                echo "2820275g-S4A:SQL Injection (SQLi) Test - Report Generated"
+                echo "2820275g-S4A: SQL Injection (SQLi) Test - Report Generated"
             }
         }
 
         stage('2820275g-S4B') {
             steps {
-                echo "2820275g-S4A:Cross-Site Scripting (Xss) Test - Report Generated"
+                echo "2820275g-S4B: Cross-Site Scripting (XSS) Test - Report Generated"
             }
         }
 
@@ -54,16 +54,14 @@ pipeline {
                         error("Abort Pipeline requested by user.")
                     }
                 }
+            }
+        }   
 
-        }
-
-         stage('2820275g-S6') {
+        stage('2820275g-S6') {
             when { expression { currentBuild.resultIsBetterOrEqualTo('SUCCESS') } }
             steps {
-                echo "2820275g-S6:Getting ready for next phase."
+                echo "2820275g-S6: Getting ready for next phase."
             }
-
+        }
     }
-}
-}
 }
