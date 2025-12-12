@@ -5,31 +5,31 @@ pipeline {
 
         stage('2820275g-S1') {
             steps {
-                echo "Running Stage 1"
+                echo "2820275g-S1: Release environment is ready."
             }
         }
 
         stage('2820275g-S2') {
             steps {
-                echo "Running Stage 2"
+                echo "2820275g-S2: Release Windows checked - Continue the pipeline"
             }
         }
 
         stage('2820275g-S3') {
             steps {
-                echo "Running Stage 3"
+                echo "2820275g-S3: Web Server is setup and running"
             }
         }
 
         stage('2820275g-S4A') {
             steps {
-                echo "Running Stage 4A"
+                echo "2820275g-S4A:SQL Injection (SQLi) Test - Report Generated"
             }
         }
 
         stage('2820275g-S4B') {
             steps {
-                echo "Running Stage 4B"
+                echo "2820275g-S4A:Cross-Site Scripting (Xss) Test - Report Generated"
             }
         }
 
