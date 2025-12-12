@@ -35,8 +35,26 @@ pipeline {
 
         stage('2820275g-S5') {
             steps {
-                echo "Running Stage 5"
-            }
+                script {
+                    def userOption = input(
+                        id: 'Stage5Check',
+                        message: '2820275g, after checking security reports, continue the pipeline?',
+                        parameters: [
+                            choice(
+                                choices: ['Proceed', 'Abort'],
+                                description: 'Select an option:',
+                                name: 'pipestage5option'
+                            )
+                        ]
+                    )
+
+                    if (userOption == 'Proceed') {
+                        echo "2820275g-S5: Approve to continue the pipeline."
+                    } else {
+                        error("Abort Pipeline requested by user.")
+                    }
+                }
+
         }
 
         stage('2820275g-S6') {
